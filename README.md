@@ -64,8 +64,9 @@ curl -fsSL get.klipperbackup.xyz | bash
 ~/klipper-backup/install.sh
 ```
 
-/klipper-backup/.env
 ```shell
+/klipper-backup/.env
+
 backupPaths=( \
 "printer_data/config/*" \
 "printer_data/database/*" \
