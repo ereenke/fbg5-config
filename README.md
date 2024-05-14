@@ -1,6 +1,13 @@
 # Flyingbear Ghost 5 config backup 💾
 Reinstall steps.
 
+
+### MainsailOS
+Install MainsailOS to a microSD card.
+
+https://docs-os.mainsail.xyz/
+
+
 ### Setting RPi as a secondary MCU
 Will be needed to connect the ADXL345 sensor and macro buttons.
 
@@ -35,6 +42,18 @@ sudo nano /boot/config.txt
 temp_soft_limit=70
 ```
 
+### G-Code Shell Command Plugin
+```shell
+sudo apt-get update && sudo apt-get install git -y
+
+cd ~ && git clone https://github.com/dw-0/kiauh.git
+```
+
+4. Advanced -> 8. G-Code Shell Command
+```shell
+./kiauh/kiauh.sh
+```
+
 ### Klipper-Backup
 Klipper backup script for manual or automated GitHub backups.
 
@@ -57,14 +76,4 @@ Manual run:
 ~/klipper-backup/script.sh
 ```
 
-### G-Code Shell Command Plugin
-```shell
-sudo apt-get update && sudo apt-get install git -y
 
-cd ~ && git clone https://github.com/dw-0/kiauh.git
-```
-
-4. Advanced -> 8. G-Code Shell Command
-```shell
-./kiauh/kiauh.sh
-```
