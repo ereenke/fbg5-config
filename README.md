@@ -1,9 +1,8 @@
 # Flyingbear Ghost 5 config backup 💾
-Reinstall steps.
-
+These steps need to be taken to restore the system in case my microSD card breaks again.
 
 ### MainsailOS
-Install MainsailOS to a microSD card.
+Install MainsailOS.
 
 https://docs-os.mainsail.xyz/
 
@@ -49,9 +48,10 @@ sudo apt-get update && sudo apt-get install git -y
 cd ~ && git clone https://github.com/dw-0/kiauh.git
 ```
 
-4. Advanced -> 8. G-Code Shell Command
 ```shell
 ./kiauh/kiauh.sh
+
+4. Advanced -> 8. G-Code Shell Command
 ```
 
 ### Klipper-Backup
@@ -64,6 +64,7 @@ curl -fsSL get.klipperbackup.xyz | bash
 ~/klipper-backup/install.sh
 ```
 
+/klipper-backup/.env
 ```shell
 backupPaths=( \
 "printer_data/config/*" \
