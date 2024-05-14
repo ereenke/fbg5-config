@@ -3,6 +3,7 @@ Reinstall steps.
 
 ### Setting RPi as a secondary MCU
 Will be needed to connect the ADXL345 sensor and macro buttons.
+
 https://www.klipper3d.org/RPi_microcontroller.html
 
 Install the rc script:
@@ -34,8 +35,9 @@ sudo nano /boot/config.txt
 temp_soft_limit=70
 ```
 
-### Klipper-Backup:
+### Klipper-Backup
 Klipper backup script for manual or automated GitHub backups.
+
 https://klipperbackup.xyz/
 
 ```shell
@@ -60,8 +62,9 @@ Manual run:
 sudo apt-get update && sudo apt-get install git -y
 
 cd ~ && git clone https://github.com/dw-0/kiauh.git
-
-./kiauh/kiauh.sh
+```
 
 4. Advanced -> 8. G-Code Shell Command
+```shell
+./kiauh/kiauh.sh
 ```
