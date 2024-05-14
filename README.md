@@ -64,8 +64,15 @@ curl -fsSL get.klipperbackup.xyz | bash
 ~/klipper-backup/install.sh
 ```
 
-```shell
 /klipper-backup/.env
+```shell
+
+github_token=
+github_username=ereenke
+github_repository=fbg5-config
+branch_name=main
+commit_username="user"
+commit_email="user@3dprinter"
 
 backupPaths=( \
 "printer_data/config/*" \
