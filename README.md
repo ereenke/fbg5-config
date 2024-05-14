@@ -1,5 +1,5 @@
 # Flyingbear Ghost 5 config backup 💾
-These steps need to be taken to restore the system in case my microSD card breaks again.
+These steps need to be taken to restore my config in case microSD card breaks again.
 
 ### MainsailOS
 Install MainsailOS.
@@ -33,7 +33,7 @@ sudo service klipper start
 sudo usermod -a -G tty pi
 ```
 ### Increasing the MCU temperature alarm limit
-From 60C to 70C.
+From 60C default to 70C.
 ```shell
 sudo nano /boot/config.txt
 
