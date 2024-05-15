@@ -63,8 +63,9 @@ curl -fsSL get.klipperbackup.xyz | bash
 ~/klipper-backup/install.sh
 ```
 
-nano /klipper-backup/.env
 ```shell
+nano /klipper-backup/.env
+
 github_token=
 github_username=ereenke
 github_repository=fbg5-config
@@ -78,8 +79,9 @@ backupPaths=( \
 )
 ```
 
-`sudo nano /etc/systemd/system/github-backup.service`
 ```shell
+sudo nano /etc/systemd/system/github-backup.service
+
 [Unit]
 Description="Github backup service"
 After=network-online.target
@@ -97,8 +99,10 @@ ExecStart=/usr/bin/env bash  -c "/usr/bin/env bash $HOME/klipper-backup/script.s
 WantedBy=default.target
 ```
 
-`sudo nano /etc/systemd/system/github-backup.timer`
 ```shell
+sudo nano /etc/systemd/system/github-backup.timer
+
+
 [Unit]
 Description="Github backup timer"
 
