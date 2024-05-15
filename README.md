@@ -1,8 +1,7 @@
 # Flyingbear Ghost 5 config backup 💾
-These steps need to be taken to restore my config in case microSD card breaks again.
+These steps need to be taken to restore my config in case microSD card dead again.
 
-### MainsailOS
-Install MainsailOS.
+### Install MainsailOS
 
 https://docs-os.mainsail.xyz/
 
@@ -64,9 +63,8 @@ curl -fsSL get.klipperbackup.xyz | bash
 ~/klipper-backup/install.sh
 ```
 
-/klipper-backup/.env
+nano /klipper-backup/.env
 ```shell
-
 github_token=
 github_username=ereenke
 github_repository=fbg5-config
@@ -80,9 +78,45 @@ backupPaths=( \
 )
 ```
 
+`sudo nano /etc/systemd/system/github-backup.service`
+```shell
+[Unit]
+Description="Github backup service"
+After=network-online.target
+
+[Service]
+ExecStart=/home/user/klipper-backup/script.sh
+
+[Service]
+User=user
+Type=oneshot
+ExecStart=/usr/bin/env bash  -c "/usr/bin/env bash $HOME/klipper-backup/script.sh \"New Backup - $(date +\"%%x - %%X\")\""
+#ExecStart=/bin/bash -c 'bash $HOME/klipper-backup/script.sh'
+
+[Install]
+WantedBy=default.target
+```
+
+`sudo nano /etc/systemd/system/github-backup.timer`
+```shell
+[Unit]
+Description="Github backup timer"
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+Unit=github-backup.service
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```shell
+sudo systemctl start github-backup.service
+sudo systemctl enable github-backup.service
+```
+
 Manual run:
 ```shell
 ~/klipper-backup/script.sh
 ```
-
-
