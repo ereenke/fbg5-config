@@ -93,7 +93,6 @@ ExecStart=/home/user/klipper-backup/script.sh
 User=user
 Type=oneshot
 ExecStart=/usr/bin/env bash  -c "/usr/bin/env bash $HOME/klipper-backup/script.sh \"New Backup - $(date +\"%%x - %%X\")\""
-#ExecStart=/bin/bash -c 'bash $HOME/klipper-backup/script.sh'
 
 [Install]
 WantedBy=default.target
