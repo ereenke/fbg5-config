@@ -79,6 +79,9 @@ backupPaths=( \
 )
 ```
 
+Systemd timer automatic weekly backup:
+
+
 ```shell
 sudo nano /etc/systemd/system/github-backup.service
 
@@ -119,7 +122,7 @@ sudo systemctl start github-backup.service
 sudo systemctl enable github-backup.service
 ```
 
-Manual run:
+Manual run backup:
 ```shell
 ~/klipper-backup/script.sh
 ```
