@@ -29,7 +29,7 @@ sudo service klipper stop
 make flash
 sudo service klipper start
 
-sudo usermod -a -G tty pi
+sudo usermod -a -G tty user
 ```
 ### Increasing the MCU temperature alarm limit
 From 60C default to 70C.
@@ -64,7 +64,7 @@ curl -fsSL get.klipperbackup.xyz | bash
 ```
 
 ```shell
-nano /klipper-backup/.env
+nano ~/klipper-backup/.env
 
 github_token=
 github_username=ereenke
